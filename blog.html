@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Tent Tarps to Tech Stacks — CloudTentO Blog</title>
+  <meta name="description" content="How CloudTentO is rewiring Hyderabad's event economy with AI, geo-fencing, and zero-commission vendor connections.">
+  <link rel="canonical" href="https://nbraju.github.io/TentHouseS-/blog.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="From Tent Tarps to Tech Stacks: How CloudTentO is Rewiring Hyderabad's Event Economy">
+  <meta property="og:description" content="AI meets tent houses. Inside Hyderabad's first geo-fenced event infrastructure network.">
+  <meta property="og:url" content="https://nbraju.github.io/TentHouseS-/blog.html">
+  <meta property="og:image" content="https://kimi-web-img.kimi.ai/img/t4.ftcdn.net/feb9533c33d2b31fb17aeaca145a8ef4678a4c30.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fafafa; }
+    .font-display { font-family: 'Sora', sans-serif; }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #312e81 100%);
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #f97316, #fb923c, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .quote-mark {
+      font-size: 4rem;
+      line-height: 1;
+      color: #f97316;
+      opacity: 0.3;
+      font-family: Georgia, serif;
+    }
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+    }
+    .tag-pill {
+      background: linear-gradient(135deg, #fff7ed, #ffedd5);
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+    }
+    .highlight-box {
+      background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+      border-left: 4px solid #f59e0b;
+    }
+    .stats-card {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border: 1px solid #bbf7d0;
+    }
+    .cta-gradient {
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+    }
+    .smooth-scroll { scroll-behavior: smooth; }
+
+    .img-zoom {
+      overflow: hidden;
+      border-radius: 16px;
+    }
+    .img-zoom img {
+      transition: transform 0.5s ease;
+    }
+    .img-zoom:hover img {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+  </style>
+</head>
+<body class="smooth-scroll">
+
+  <!-- Sticky Nav -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="https://nbraju.github.io/TentHouseS-/" class="font-display text-xl font-extrabold text-slate-900">
+        <span class="text-blue-600">Cloud</span><span class="text-orange-500">TentO</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="https://nbraju.github.io/TentHouseS-/" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition">
+          <i class="fa-solid fa-arrow-left mr-1"></i> Back to App
+        </a>
+        <a href="https://nbraju.github.io/TentHouseS-/#onboard" class="hidden sm:inline-flex bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold px-4 py-2 rounded-full transition">
+          List Free
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero-gradient text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="https://kimi-web-img.kimi.ai/img/t4.ftcdn.net/feb9533c33d2b31fb17aeaca145a8ef4678a4c30.jpg" 
+           alt="Hyderabad skyline" class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/80 to-slate-900/95"></div>
+    <div class="relative max-w-4xl mx-auto px-4 py-20 sm:py-28 text-center">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-orange-300 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+        <i class="fa-solid fa-pen-nib"></i> CloudTentO Editorial
+      </div>
+      <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight animate-in">
+        From Tent Tarps<br>to <span class="text-gradient">Tech Stacks</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-300 mt-6 max-w-2xl mx-auto leading-relaxed animate-in delay-1">
+        How CloudTentO is rewiring Hyderabad's event economy — one WhatsApp message at a time.
+      </p>
+      <div class="flex items-center justify-center gap-6 mt-8 text-sm text-slate-400 animate-in delay-2">
+        <span><i class="fa-regular fa-calendar mr-1.5"></i> August 2026</span>
+        <span><i class="fa-regular fa-clock mr-1.5"></i> 6 min read</span>
+        <span><i class="fa-solid fa-location-dot mr-1.5 text-orange-400"></i> Hyderabad</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 py-16">
+
+    <!-- Opening Hook -->
+    <div class="prose prose-lg prose-slate max-w-none">
+      <p class="text-xl sm:text-2xl text-slate-700 leading-relaxed font-medium">
+        <span class="quote-mark float-left mr-4 -mt-4">"</span>
+        Imagine this: It's three days before your sister's wedding. The caterer is confirmed, the florist is on speed dial, but you still don't know who has 300 cushioned chairs and a waterproof shamiana in Miyapur.
+      </p>
+    </div>
+
+    <div class="my-10 img-zoom">
+      <img src="https://kimi-web-img.kimi.ai/img/luckytenthouse.in/f2706bf718d5104104c4a278daa6d28fbb9ec217.webp" 
+           alt="Indian wedding stage decoration with red drapes and floral backdrop" 
+           class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-lg">
+      <p class="text-xs text-slate-400 mt-2 text-center">A typical wedding mandap setup — the kind of inventory CloudTentO helps discover instantly.</p>
+    </div>
+
+    <div class="prose prose-lg prose-slate max-w-none">
+      <p class="text-slate-600 leading-relaxed">
+        You call three tent houses. One doesn't pick up. One says "maybe." The third quotes a price that sounds suspiciously like he made it up on the spot.
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        Meanwhile, 8 kilometers away in Beeramguda, a tent house owner named Ramesh is sitting on 500 chairs, 4 canopies, and a sound system — all collecting dust because <strong>nobody knows he exists</strong>.
+      </p>
+      <p class="text-slate-800 font-semibold text-lg mt-6">
+        This is the invisible fracture in India's event infrastructure. And <span class="text-orange-600">CloudTentO</span> is the bridge.
+      </p>
+    </div>
+
+    <div class="section-divider my-12"></div>
+
+    <!-- What is CloudTentO -->
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+      What is CloudTentO? <span class="text-slate-400 font-normal text-lg block sm:inline">(Hint: It's Not Just a Directory)</span>
+    </h2>
+
+    <div class="prose prose-lg prose-slate max-w-none">
+      <p class="text-slate-600 leading-relaxed">
+        CloudTentO calls itself an <strong>"AI Operating System for Event Infrastructure."</strong> That's not startup fluff. It's an accurate description of what happens when you take Hyderabad's fragmented tent house ecosystem — thousands of small businesses across Hyderabad, Rangareddy, and Medchal — and wrap it in a layer of intelligence, geolocation, and zero-friction communication.
+      </p>
+    </div>
+
+    <!-- Three Pillars -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
+      <div class="card-hover bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-solid fa-map-location-dot text-orange-600 text-xl"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2">Geo-Fenced Discovery</h3>
+        <p class="text-sm text-slate-500">Real-time inventory surfacing based on your GPS location — no more calling vendors 20km away.</p>
+      </div>
+      <div class="card-hover bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-solid fa-robot text-blue-600 text-xl"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2">AI Onboarding Agent</h3>
+        <p class="text-sm text-slate-500">Reads messy WhatsApp forwards and extracts structured vendor data automatically.</p>
+      </div>
+      <div class="card-hover bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-solid fa-handshake text-green-600 text-xl"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2">Zero Commission</h3>
+        <p class="text-sm text-slate-500">Customers call vendors directly. No middleman. No platform tax. Just pure connection.</p>
+      </div>
+    </div>
+
+    <div class="section-divider my-12"></div>
+
+    <!-- AI Section -->
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+      The AI Onboarding Agent:<br>Your New Intern Never Sleeps
+    </h2>
+
+    <div class="my-8 img-zoom">
+      <img src="https://kimi-web-img.kimi.ai/img/5.imimg.com/0ccd684152e425cdf96975ff2ad68361170a6da5.jpeg" 
+           alt="Colorful Indian wedding tent with pink drapes and red carpet" 
+           class="w-full h-56 sm:h-72 object-cover rounded-2xl shadow-lg">
+    </div>
+
+    <div class="prose prose-lg prose-slate max-w-none">
+      <p class="text-slate-600 leading-relaxed">
+        Here's where CloudTentO gets genuinely interesting. They built an <strong>AI Onboarding Agent</strong> that reads unstructured text — a voice note transcript, a forwarded WhatsApp message, even a scribbled email — and pulls out vendor details like a trained data entry specialist.
+      </p>
+    </div>
+
+    <!-- Example Box -->
+    <div class="highlight-box rounded-2xl p-6 sm:p-8 my-8">
+      <p class="text-xs font-bold text-amber-700 uppercase tracking-wider mb-3">Paste This</p>
+      <p class="text-slate-700 italic text-sm sm:text-base leading-relaxed border-l-2 border-amber-400 pl-4">
+        "Hi, I'm Sri Lakshmi Tent House in Beeramguda. We have 10 canopies, 500 chairs, sound systems. Contact 9988776655. Specialising in weddings and corporate events."
+      </p>
+      <div class="mt-4 flex items-center gap-2 text-amber-700 text-sm font-semibold">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> The AI extracts everything automatically
+      </div>
+    </div>
+
+    <div class="prose prose-lg prose-slate max-w-none">
+      <p class="text-slate-600 leading-relaxed">
+        The AI extracts business name, phone, location, inventory items with quantities, specialisations, and even assigns a <strong>quality score</strong>. If the score is above 60%, the vendor is auto-approved. Below that, it flags missing fields for human review.
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        For a market where most tent house owners don't have websites, don't use CRMs, and certainly don't fill out multi-page registration forms, this is transformational. <strong>The AI meets them where they already are: in messy, human text.</strong>
+      </p>
+    </div>
+
+    <div class="section-divider my-12"></div>
+
+    <!-- Two Paths -->
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Two Paths, One Platform</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <!-- Vendor Path -->
+      <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 sm:p-8 border border-orange-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-store text-white"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg">For Tent House Owners</h3>
+        </div>
+        <ul class="space-y-3 text-sm text-slate-600">
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-orange-500 mt-0.5"></i> Free listing with direct enquiry routing</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-orange-500 mt-0.5"></i> Zero commission on direct calls</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-orange-500 mt-0.5"></i> Visibility across Hyderabad, Rangareddy & Medchal</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-orange-500 mt-0.5"></i> No app download — WhatsApp-first</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-orange-500 mt-0.5"></i> Google Drive photo integration</li>
+        </ul>
+      </div>
+      <!-- Customer Path -->
+      <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 sm:p-8 border border-emerald-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-users text-white"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg">For Event Planners</h3>
+        </div>
+        <ul class="space-y-3 text-sm text-slate-600">
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> GPS-based vendor filtering</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> Verified vendor badges</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> One-tap call or WhatsApp</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> 15-minute callback guarantee</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> Ready-made event packages</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-divider my-12"></div>
+
+    <!-- SOPs & Inventory -->
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4">The Secret Weapons: SOPs & Inventory Intelligence</h2>
+
+    <div class="my-8 img-zoom">
+      <img src="https://kimi-web-img.kimi.ai/img/luckytenthouse.in/de4c6d1424f763a4553f64e4e0e14c052aecca10.jpg" 
+           alt="Outdoor event setup with floral arch and colorful decor" 
+           class="w-full h-56 sm:h-72 object-cover rounded-2xl shadow-lg">
+    </div>
+
+    <div class="prose prose-lg prose-slate max-w-none">
+      <p class="text-slate-600 leading-relaxed">
+        Most marketplaces stop at "here's a list of vendors." CloudTentO goes further — it actually <strong>teaches both sides how to do their jobs better</strong>.
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        The platform hosts detailed <strong>SOPs for six event types</strong>: Weddings, Birthdays, Corporate Conferences, Political Meetings, Temple Festivals, and School Annual Days. Each covers pre-event planning, role assignments, on-site setup, safety protocols, and teardown procedures.
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        Then there's the <strong>Inventory Guide & Calculator</strong> — input your guest count and it tells you exactly how many chairs (always 110% of guests — because late arrivals are real), tables, lights, and labourers you need. Plus a Master Inventory Checklist that small business owners can use to audit their godown stock before the busy season.
+      </p>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-10">
+      <div class="stats-card rounded-xl p-4 text-center">
+        <div class="font-display text-2xl font-extrabold text-emerald-700">0%</div>
+        <div class="text-xs text-emerald-600 font-medium mt-1">Commission on Direct Calls</div>
+      </div>
+      <div class="stats-card rounded-xl p-4 text-center">
+        <div class="font-display text-2xl font-extrabold text-emerald-700">15 min</div>
+        <div class="text-xs text-emerald-600 font-medium mt-1">Callback Guarantee</div>
+      </div>
+      <div class="stats-card rounded-xl p-4 text-center">
+        <div class="font-display text-2xl font-extrabold text-emerald-700">12+</div>
+        <div class="text-xs text-emerald-600 font-medium mt-1">Item Categories</div>
+      </div>
+      <div class="stats-card rounded-xl p-4 text-center">
+        <div class="font-display text-2xl font-extrabold text-emerald-700">90s</div>
+        <div class="text-xs text-emerald-600 font-medium mt-1">Onboarding Time</div>
+      </div>
+    </div>
+
+    <div class="section-divider my-12"></div>
+
+    <!-- Why Hyderabad -->
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Why Hyderabad? Why Now?</h2>
+
+    <div class="my-8 img-zoom">
+      <img src="https://kimi-web-img.kimi.ai/img/www.shutterstock.com/21376baf0864341c89c13e7bf03688da7392a21c.jpg" 
+           alt="Hyderabad modern cityscape with buildings and lake" 
+           class="w-full h-56 sm:h-72 object-cover rounded-2xl shadow-lg">
+      <p class="text-xs text-slate-400 mt-2 text-center">Hyderabad's booming event economy spans Hitech City corporate offsites to Old City traditional weddings.</p>
+    </div>
+
+    <div class="prose prose-lg prose-slate max-w-none">
+      <p class="text-slate-600 leading-relaxed">
+        Hyderabad's event economy is exploding. From Hitech City corporate offsites to traditional weddings in Old City, from political rallies in Rangareddy to temple festivals in Medchal — the demand is diverse, frequent, and high-value.
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        But the supply side is hyper-local and deeply informal. Most tent houses are family businesses with no digital presence. They rely on word-of-mouth, local notice boards, and the occasional Justdial listing that hasn't been updated since 2019.
+      </p>
+      <div class="highlight-box rounded-xl p-5 my-6">
+        <p class="text-slate-800 font-semibold text-sm">
+          <i class="fa-solid fa-lightbulb text-amber-500 mr-2"></i>
+          CloudTentO's insight is simple: <strong>Don't try to digitise the vendor. Digitise the connection between vendor and customer.</strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="section-divider my-12"></div>
+
+    <!-- Business Model -->
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4">The Business Model: Refreshingly Honest</h2>
+
+    <div class="prose prose-lg prose-slate max-w-none">
+      <p class="text-slate-600 leading-relaxed">
+        CloudTentO doesn't hide its economics. <strong>Direct calls: 0% commission.</strong> Managed bookings: platform fee applies. This transparency builds trust. Vendors aren't suspicious of a platform eating their margins. Customers aren't being stealth-marked up.
+      </p>
+    </div>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-2 mt-8 mb-4">
+      <span class="tag-pill px-3 py-1 rounded-full text-xs font-semibold">#Hyderabad</span>
+      <span class="tag-pill px-3 py-1 rounded-full text-xs font-semibold">#EventTech</span>
+      <span class="tag-pill px-3 py-1 rounded-full text-xs font-semibold">#AI</span>
+      <span class="tag-pill px-3 py-1 rounded-full text-xs font-semibold">#TentHouse</span>
+      <span class="tag-pill px-3 py-1 rounded-full text-xs font-semibold">#StartupIndia</span>
+      <span class="tag-pill px-3 py-1 rounded-full text-xs font-semibold">#WhatsApp</span>
+    </div>
+
+    <div class="section-divider my-12"></div>
+
+    <!-- Final Word -->
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Final Word</h2>
+
+    <div class="prose prose-lg prose-slate max-w-none">
+      <p class="text-slate-600 leading-relaxed">
+        There's something deeply satisfying about watching technology solve a problem that isn't "how do we get more engagement on Reels" but rather <strong>"how does a family in LB Nagar find 200 plastic chairs for a naming ceremony by Thursday."</strong>
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        CloudTentO isn't trying to be the Amazon of tent houses. It's trying to be the <strong>intelligent connective tissue</strong> of an industry that has always been local, personal, and word-of-mouth — but deserves to be discoverable, efficient, and scalable.
+      </p>
+      <p class="text-slate-800 font-semibold text-lg mt-6">
+        Your next customer is already searching. The only question is whether they'll find you.
+      </p>
+    </div>
+
+    <!-- Author Box -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-6 mt-12 flex items-start gap-4 shadow-sm">
+      <div class="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xl shrink-0">
+        CT
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">CloudTentO Editorial</h4>
+        <p class="text-sm text-slate-500 mt-1">Covering the intersection of technology and India's event infrastructure economy. Built by BharatStack Ventures.</p>
+        <div class="flex gap-3 mt-3">
+          <a href="https://wa.me/919948680017" target="_blank" class="text-green-600 hover:text-green-700 text-sm font-semibold">
+            <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
+          </a>
+          <a href="mailto:nbraju@hotmail.com" class="text-blue-600 hover:text-blue-700 text-sm font-semibold">
+            <i class="fa-solid fa-envelope mr-1"></i> Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA Section -->
+  <section class="cta-gradient text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Ready to Join the Network?</h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+        Whether you're planning an event or own a tent house, CloudTentO connects Hyderabad's event ecosystem in under 2 minutes.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://nbraju.github.io/TentHouseS-/#enquiry" class="bg-white text-orange-600 font-bold px-8 py-3.5 rounded-xl hover:shadow-xl transition transform hover:-translate-y-0.5">
+          <i class="fa-solid fa-magnifying-glass mr-2"></i> Find Rentals
+        </a>
+        <a href="https://nbraju.github.io/TentHouseS-/#onboard" class="bg-white/20 backdrop-blur-sm text-white font-bold px-8 py-3.5 rounded-xl border border-white/30 hover:bg-white/30 transition">
+          <i class="fa-solid fa-store mr-2"></i> List Your Business
+        </a>
+      </div>
+      <p class="text-white/60 text-sm mt-6">
+        <i class="fa-solid fa-location-dot mr-1"></i> Serving Hyderabad · Rangareddy · Medchal
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-10 px-4">
+    <div class="max-w-5xl mx-auto flex flex-wrap justify-between items-center gap-6">
+      <div>
+        <div class="font-display text-xl font-extrabold text-white">
+          <span class="text-blue-500">Cloud</span><span class="text-orange-500">TentO</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-1">AI Operating System for Event Infrastructure</p>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a href="https://nbraju.github.io/TentHouseS-/" class="hover:text-white transition">Home</a>
+        <a href="https://nbraju.github.io/TentHouseS-/#marketplace" class="hover:text-white transition">Directory</a>
+        <a href="https://nbraju.github.io/TentHouseS-/#packages" class="hover:text-white transition">Packages</a>
+        <a href="https://nbraju.github.io/TentHouseS-/#sops" class="hover:text-white transition">SOPs</a>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto mt-6 pt-6 border-t border-slate-800 text-center text-xs text-slate-600">
+      <p>© 2026 CloudTentO · BharatStack Ventures · Built for hyper-local event infrastructure in Hyderabad</p>
+    </div>
+  </footer>
+
+</body>
+</html>
