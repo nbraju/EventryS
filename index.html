@@ -26,12 +26,7 @@
   <meta name="twitter:title" content="CloudTentO — AI Operating System for Event Infrastructure" />
   <meta name="twitter:description" content="Helping event rental businesses manage inventory, generate quotations, coordinate vendors, and automate operations with AI." />
 
-  <!-- ============================================================ -->
-  <!-- ANALYTICS — replace G-WKZWEG474S with your real GA4 ID.       -->
-  <!-- This is what lets you show investors real visitor/enquiry     -->
-  <!-- numbers instead of just a vendor count.                       -->
-  <!-- ============================================================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AMMA"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKZWEG474S"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -55,6 +50,7 @@
       --green-dark: #15803d;
       --ink: #0f172a;
       --slate-mid: #475569;
+      --blue: #3b82f6;
     }
 
     .font-display { font-family: 'Sora', sans-serif; }
@@ -73,9 +69,7 @@
       background: linear-gradient(135deg, #0f172a 0%, #1c1917 60%, #1e1b0e 100%);
     }
     .hero-accent { color: var(--saffron); }
-    .saffron-glow {
-      text-shadow: 0 0 40px rgba(249,115,22,0.4);
-    }
+    .blue-glow { text-shadow: 0 0 40px rgba(59,130,246,0.3); }
 
     .vendor-card { transition: all 0.2s ease; }
     .vendor-card.hidden-card { display: none; }
@@ -202,6 +196,19 @@
     }
     .btn-green:hover { background: var(--green-dark); transform: translateY(-1px); }
 
+    .btn-blue {
+      background: var(--blue);
+      color: white;
+      font-weight: 700;
+      border-radius: 12px;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-blue:hover { background: #2563eb; transform: translateY(-1px); }
+
     .step-num {
       width: 40px; height: 40px;
       background: var(--saffron);
@@ -249,7 +256,7 @@
       padding: 4px 16px; border-radius: 999px; display: inline-block;
     }
 
-    /* ---- NEW STYLES FOR VENDOR DETAIL MODAL, CHAT, SOPs ---- */
+    /* Modal */
     .modal-overlay {
       position: fixed; inset: 0;
       background: rgba(0,0,0,0.6);
@@ -440,7 +447,7 @@
       font-size: 13px;
     }
 
-    /* ---- PROMINENT NAVIGATION ---- */
+    /* Navigation */
     nav a.nav-link {
       font-weight: 600;
       padding: 0.5rem 1.2rem;
@@ -461,7 +468,7 @@
     }
     nav a.nav-link i { margin-right: 0.4rem; }
 
-    /* ---- INVENTORY GUIDE STYLES (scoped) ---- */
+    /* Inventory Guide Styles */
     .inventory-guide-section {
       background: #f8fafc;
     }
@@ -522,7 +529,6 @@
       font-size: 0.75rem;
       color: #64748b;
     }
-
     .inventory-guide-section .ig-event-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -584,7 +590,6 @@
       border-radius: 6px;
       font-size: 0.8rem;
     }
-
     .inventory-guide-section .ig-tips-box {
       background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
       border: 1px solid #fde68a;
@@ -615,7 +620,6 @@
     .inventory-guide-section .ig-tips-box li::before {
       content: '💡';
     }
-
     .inventory-guide-section .ig-table {
       width: 100%;
       border-collapse: collapse;
@@ -652,7 +656,6 @@
     .inventory-guide-section .ig-table .ig-highlight td {
       background: #fffbeb;
     }
-
     .inventory-guide-section .ig-footer-cta {
       background: linear-gradient(135deg, var(--saffron) 0%, #ea580c 100%);
       color: white;
@@ -683,6 +686,83 @@
       transform: scale(1.05);
     }
 
+    /* AI Agent Styles */
+    .ai-badge {
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .ai-badge::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #a78bfa;
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    .quality-excellent { background: #d1fae5; color: #065f46; }
+    .quality-good { background: #fef3c7; color: #92400e; }
+    .quality-fair { background: #fde68a; color: #78350f; }
+    .quality-poor { background: #fee2e2; color: #991b1b; }
+    .extracted-item {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 4px;
+      font-size: 13px;
+    }
+    .extracted-item .qty { font-weight: 700; color: #3b82f6; }
+    .extracted-item .category { font-size: 10px; text-transform: uppercase; color: #94a3b8; background: #f1f5f9; padding: 1px 8px; border-radius: 999px; }
+    .chat-bubble {
+      padding: 10px 14px;
+      border-radius: 12px;
+      max-width: 85%;
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .chat-bubble.bot {
+      background: white;
+      border: 1px solid #e2e8f0;
+      color: #1e293b;
+      align-self: flex-start;
+    }
+    .chat-bubble.user {
+      background: #3b82f6;
+      color: white;
+      align-self: flex-end;
+    }
+    .chat-bubble.system {
+      background: #f1f5f9;
+      color: #64748b;
+      align-self: center;
+      font-size: 12px;
+      border: 1px dashed #cbd5e1;
+    }
+    #waChat {
+      display: flex;
+      flex-direction: column;
+      max-height: 400px;
+      overflow-y: auto;
+      padding: 12px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+
     @media (max-width: 640px) {
       .chat-widget { width: 90%; right: 5%; bottom: 10px; }
       .modal-content { padding: 16px; margin: 10px; }
@@ -691,6 +771,7 @@
       .inventory-guide-section .ig-calc-row { flex-direction: column; align-items: stretch; }
       .inventory-guide-section .ig-calc-row .ig-value { text-align: left; }
       nav a.nav-link { font-size: 0.75rem; padding: 0.3rem 0.8rem; }
+      .extracted-item { font-size: 12px; padding: 6px 10px; }
     }
   </style>
 </head>
@@ -721,10 +802,13 @@
         <a href="#onboard" class="nav-link"><i class="fa-solid fa-plus-circle"></i> List</a>
         <a href="#packages" class="nav-link"><i class="fa-solid fa-box"></i> Packages</a>
         <a href="#sops" class="nav-link"><i class="fa-solid fa-clipboard-list"></i> SOPs</a>
-        <a href="#inventory-guide" class="nav-link active"><i class="fa-solid fa-cubes"></i> Inventory</a>
+        <a href="#inventory-guide" class="nav-link"><i class="fa-solid fa-cubes"></i> Inventory</a>
+        <a href="#ai-onboard" class="nav-link active"><i class="fa-solid fa-robot"></i> AI Onboard</a>
         <a href="#enquiry" class="nav-link"><i class="fa-solid fa-search"></i> Enquire</a>
         <a href="#onboard" class="btn-saffron text-xs sm:text-sm px-4 py-2 shadow-md ml-1 flex-shrink-0">
-        <a href="blog.html" class="nav-link"><i class="fa-solid fa-newspaper"></i> Blog</a>
+        <a href="blog.html" class="text-sm text-slate-400 hover:text-white transition mt-4 inline-block">
+  <i class="fa-solid fa-newspaper mr-1"></i> Read why we built this →
+</a>
           <i class="fa-solid fa-store"></i> <span>List Free</span>
         </a>
       </div>
@@ -941,6 +1025,163 @@
       <div class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-emerald-600"></i> Free listing, no hidden fees</div>
       <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-600"></i> Direct calls — zero commission</div>
       <div class="flex items-center gap-2"><i class="fa-solid fa-clock text-orange-500"></i> Live within 1 hour</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- AI ONBOARDING AGENT SECTION (NEW)                            -->
+<!-- ============================================================ -->
+<section id="ai-onboard" class="py-16 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200 scroll-mt-20">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="text-center mb-10">
+      <span class="section-label">AI Onboarding Agent</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Instant Vendor Extraction</h2>
+      <p class="text-slate-500 mt-2 max-w-xl mx-auto">Paste any text — WhatsApp message, email, voice transcript — and let AI extract vendor details automatically.</p>
+    </div>
+
+    <!-- Input Area -->
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 max-w-3xl mx-auto mb-6">
+      <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+        <i class="fa-regular fa-message text-purple-500 mr-1.5"></i> Paste Vendor Message
+      </label>
+      <textarea id="aiInput" rows="4" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm transition resize-none"
+        placeholder="Paste any vendor message here...&#10;&#10;Example: &quot;Hi, I'm Sri Lakshmi Tent House in Beeramguda. We have 10 canopies, 500 chairs, sound systems. Contact 9988776655. Specialising in weddings and corporate events.&quot;"></textarea>
+      <div class="flex flex-wrap gap-3 mt-4">
+        <button id="aiExtractBtn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-2.5 rounded-xl transition flex items-center gap-2 text-sm shadow-md shadow-purple-500/25">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> AI Extract
+        </button>
+        <button id="aiClearBtn" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-6 py-2.5 rounded-xl transition text-sm">
+          <i class="fa-regular fa-trash-can"></i> Clear
+        </button>
+        <span class="text-xs text-slate-400 flex items-center ml-auto">⚡ Instant extraction · No data stored</span>
+      </div>
+    </div>
+
+    <!-- Results Container -->
+    <div id="aiResults" class="max-w-3xl mx-auto hidden">
+      <!-- Quality Score -->
+      <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 mb-6">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Quality Score</span>
+            <div class="flex items-center gap-3 mt-1">
+              <span id="aiQualityScore" class="text-3xl font-bold text-slate-900">0%</span>
+              <span id="aiQualityLabel" class="px-3 py-1 rounded-full text-sm font-bold">Pending</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span id="aiStatusBadge" class="px-4 py-2 bg-slate-100 rounded-xl text-sm font-medium text-slate-700"><i class="fa-regular fa-clock mr-1.5"></i> Needs Review</span>
+            <span id="aiDuplicateBadge" class="hidden px-4 py-2 bg-amber-100 rounded-xl text-sm font-medium text-amber-800"><i class="fa-regular fa-copy mr-1.5"></i> Duplicate Found</span>
+          </div>
+        </div>
+        <div id="aiMissingFields" class="mt-3 flex flex-wrap gap-1.5"></div>
+      </div>
+
+      <!-- Extracted Data -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6">
+          <h3 class="font-bold text-slate-800 flex items-center gap-2 mb-4">
+            <i class="fa-solid fa-store text-purple-500"></i> Vendor Details
+          </h3>
+          <div class="space-y-3">
+            <div><label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Business Name</label><p id="aiExtractedName" class="text-slate-800 font-medium">—</p></div>
+            <div><label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Phone</label><p id="aiExtractedPhone" class="text-slate-800 font-medium">—</p></div>
+            <div><label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Address</label><p id="aiExtractedAddress" class="text-slate-800 font-medium">—</p></div>
+            <div><label class="text-xs font-bold text-slate-500 uppercase tracking-wider">City / District</label><p id="aiExtractedCity" class="text-slate-800 font-medium">—</p></div>
+            <div><label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Area / Locality</label><p id="aiExtractedArea" class="text-slate-800 font-medium">—</p></div>
+            <div><label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Pincode</label><p id="aiExtractedPincode" class="text-slate-800 font-medium">—</p></div>
+            <div><label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Specialises In</label><p id="aiExtractedSpecialises" class="text-slate-800 font-medium">—</p></div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6">
+          <h3 class="font-bold text-slate-800 flex items-center gap-2 mb-4">
+            <i class="fa-solid fa-boxes text-purple-500"></i> Inventory Items
+            <span id="aiItemCount" class="text-xs font-normal text-slate-400 ml-auto">0 items</span>
+          </h3>
+          <div id="aiExtractedItems" class="flex flex-wrap gap-2 min-h-[80px] items-start">
+            <p class="text-sm text-slate-400 w-full text-center py-4">No items extracted yet.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Suggestions -->
+      <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl border border-purple-200 p-6 mb-6">
+        <h4 class="font-bold text-slate-800 flex items-center gap-2 text-sm">
+          <i class="fa-solid fa-lightbulb text-purple-500"></i> AI Suggestions
+        </h4>
+        <div id="aiSuggestions" class="mt-2 text-sm text-slate-600 space-y-1">
+          <p>• No suggestions yet. Run AI extraction first.</p>
+        </div>
+      </div>
+
+      <!-- Auto-Fill Form -->
+      <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 mb-6">
+        <h3 class="font-bold text-slate-800 flex items-center gap-2 mb-4">
+          <i class="fa-regular fa-pen-to-square text-purple-500"></i> Auto-Fill Form
+          <span class="text-xs font-normal text-slate-400 ml-auto">Click "Publish" to add vendor</span>
+        </h3>
+        <form id="aiOnboardingForm" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Vendor Name *</label>
+              <input type="text" id="aiFormName" required placeholder="e.g., Sri Lakshmi Tent House" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm transition" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Phone *</label>
+              <input type="tel" id="aiFormPhone" required placeholder="+91 9988776655" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm transition" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Full Address</label>
+            <input type="text" id="aiFormAddress" placeholder="Street, landmark, etc." class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm transition" />
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">City / District</label>
+              <input type="text" id="aiFormCity" placeholder="e.g., Hyderabad" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm transition" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Area / Locality</label>
+              <input type="text" id="aiFormArea" placeholder="e.g., Beeramguda" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm transition" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Pincode</label>
+              <input type="text" id="aiFormPincode" placeholder="e.g., 502319" maxlength="6" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm transition" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Specialises In</label>
+            <input type="text" id="aiFormSpecialises" placeholder="e.g., Weddings, Corporate Events" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm transition" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Stock Items &amp; Qty * <span class="text-slate-400 font-normal">(comma separated)</span></label>
+            <textarea id="aiFormItems" required rows="2" placeholder="e.g., Iron Frame Canopies - 10, Plastic Chairs - 500, Sound Systems - 2" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm transition resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow transition flex items-center justify-center gap-2 text-sm">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Publish Vendor
+          </button>
+        </form>
+      </div>
+
+      <!-- WhatsApp-Style Chat -->
+      <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6">
+        <h3 class="font-bold text-slate-800 flex items-center gap-2 mb-4">
+          <i class="fa-brands fa-whatsapp text-green-500"></i> WhatsApp-Style Onboarding
+          <span class="text-xs font-normal text-slate-400 ml-auto">Try the conversational flow</span>
+        </h3>
+        <div id="waChat">
+          <div class="chat-bubble bot">👋 Hi! I'm your AI onboarding assistant. I'll help you list your tent house in under 2 minutes.</div>
+          <div class="chat-bubble bot">What is your business name?</div>
+        </div>
+        <div class="flex gap-2 mt-3">
+          <input type="text" id="waInput" placeholder="Type your answer..." class="flex-1 px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm transition" />
+          <button id="waSend" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-2.5 rounded-xl transition text-sm flex items-center gap-2">
+            <i class="fa-solid fa-paper-plane"></i> Send
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1166,7 +1407,7 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- INVENTORY GUIDE SECTION (NEW)                                 -->
+<!-- INVENTORY GUIDE SECTION (existing)                           -->
 <!-- ============================================================ -->
 <section id="inventory-guide" class="inventory-guide-section py-16 scroll-mt-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1513,6 +1754,7 @@
       <h2>Need a Custom Inventory Audit?</h2>
       <p>We help tent house owners assess gaps and plan purchases for the upcoming season.</p>
       <a href="https://wa.me/919948680017" class="btn-ig" target="_blank">Chat on WhatsApp</a>
+      <a href="blog.html" class="hover:text-orange-600 transition">Blog</a>
     </div>
   </div>
 </section>
@@ -1632,8 +1874,8 @@
         <a href="#packages" class="hover:text-orange-600 transition">Packages</a>
         <a href="#sops" class="hover:text-orange-600 transition">SOPs</a>
         <a href="#inventory-guide" class="hover:text-orange-600 transition">Inventory Guide</a>
+        <a href="#ai-onboard" class="hover:text-orange-600 transition">AI Onboard</a>
         <a href="#enquiry" class="hover:text-orange-600 transition">Enquiry</a>
-        <a href="blog.html" class="nav-link"><i class="fa-solid fa-newspaper"></i> Blog</a>
         <a href="https://wa.me/919948680017" target="_blank" class="hover:text-green-600 transition"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
       </div>
     </div>
@@ -1686,7 +1928,7 @@
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwVshavTK1yv5gBqvs--6gep0NdbJsbx4nEWmjyJy6sJWdGwAaeLC4y6pFpo4slxgWu6w/exec';
 
   function backendEnabled() {
-    return GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.indexOf('https://script.google.com') === 0;
+    return GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.indexOf('https://script.google') === 0;
   }
 
   function postToBackend(payload) {
@@ -1717,25 +1959,346 @@
     setTimeout(() => toast.classList.remove('show'), 4000);
   }
 
-  // ===== DYNAMIC VENDOR LOADING =====
+  // ============================================================
+  // AI ONBOARDING AGENT (NEW)
+  // ============================================================
+
+  // --- NLP Parser ---
+  const vendorNLP = {
+    patterns: {
+      name: /(?:name|business|shop|firm|tent house)[\s:]*([A-Za-z0-9\s&.,'-]{3,}?)(?:\n|,|\.|$|contact)/i,
+      phone: /(?:\+?91|0)?[6-9]\d{9}/,
+      address: /(?:address|located at|in|near)[\s:]*([^,\n]+)/i,
+      city: /(?:city|district|town)[\s:]*([A-Za-z\s]+)/i,
+      area: /(?:area|locality|colony|village)[\s:]*([A-Za-z\s]+)/i,
+      pincode: /\b\d{6}\b/,
+      specialises: /(?:specialise|expert|focus)[\s:]*([A-Za-z\s,]+)/i,
+      items: /(?:items|inventory|have|available|stock)[\s:]*([^\n]+)/i,
+      email: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/
+    },
+    parse(text) {
+      const result = { raw: text };
+      for (const [key, pattern] of Object.entries(this.patterns)) {
+        const match = text.match(pattern);
+        if (match) {
+          result[key] = (match[1] || match[0]).trim();
+        }
+      }
+      return result;
+    }
+  };
+
+  // --- Inventory Extractor ---
+  const inventoryExtractor = {
+    categories: {
+      canopy: { keywords: ['canopy', 'shamiana', 'tent', 'pandal', 'cover', 'shamiyana'], price: 3500 },
+      chair: { keywords: ['chair', 'seat', 'stool', 'bench', 'sofa', 'banquet'], price: 25 },
+      table: { keywords: ['table', 'desk', 'counter', 'display', 'dining'], price: 150 },
+      lighting: { keywords: ['light', 'led', 'bulb', 'spotlight', 'decoration', 'fairy'], price: 3000 },
+      sound: { keywords: ['sound', 'speaker', 'microphone', 'pa', 'audio', 'dj', 'music'], price: 8000 },
+      stage: { keywords: ['stage', 'platform', 'dais', 'podium', 'ramp'], price: 5000 },
+      carpet: { keywords: ['carpet', 'mat', 'flooring', 'rug', 'runway', 'floor'], price: 1500 },
+      generator: { keywords: ['generator', 'power', 'backup', 'inverter', 'genset'], price: 6000 }
+    },
+    extract(text) {
+      const items = [];
+      const lines = text.split(/[,;\n•\-]/).map(s => s.trim()).filter(s => s.length > 2);
+      for (const line of lines) {
+        let qty = 1;
+        let name = line;
+        const qtyMatch = line.match(/(\d+)\s*[x\-:]*\s*([a-zA-Z\s]+)/);
+        if (qtyMatch) {
+          qty = parseInt(qtyMatch[1]);
+          name = qtyMatch[2].trim();
+        } else {
+          const reverseQty = line.match(/([a-zA-Z\s]+)\s*[-:]\s*(\d+)/);
+          if (reverseQty) {
+            name = reverseQty[1].trim();
+            qty = parseInt(reverseQty[2]);
+          }
+        }
+        let category = 'general';
+        let price = 0;
+        for (const [cat, data] of Object.entries(this.categories)) {
+          if (data.keywords.some(k => name.toLowerCase().includes(k))) {
+            category = cat;
+            price = data.price;
+            break;
+          }
+        }
+        if (name.length > 2) {
+          items.push({ name: name, quantity: qty || 1, category: category, price: price, description: line });
+        }
+      }
+      if (items.length === 0) {
+        const genericMatch = text.match(/([A-Za-z\s]+)\s*[-:]\s*(\d+)/);
+        if (genericMatch) {
+          items.push({ name: genericMatch[1].trim(), quantity: parseInt(genericMatch[2]), category: 'general', price: 0, description: genericMatch[0] });
+        }
+      }
+      return items;
+    }
+  };
+
+  // --- Quality Scorer ---
+  function scoreVendor(data) {
+    let score = 0;
+    const maxScore = 100;
+    const missing = [];
+    if (data.displayName && data.displayName.length > 3) { score += 15; } else { missing.push('Business Name'); }
+    if (data.phone && data.phone.replace(/\D/g, '').length >= 10) { score += 20; } else { missing.push('Phone Number'); }
+    if (data.address && data.address.length > 5) { score += 15; } else { missing.push('Full Address'); }
+    if (data.cityDist || data.city) { score += 10; } else { missing.push('City/District'); }
+    if (data.area) { score += 10; } else { missing.push('Area/Locality'); }
+    if (data.pincode && data.pincode.length === 6) { score += 10; } else { missing.push('Pincode'); }
+    if (data.items && data.items.length > 0) { score += Math.min(20, data.items.length * 4); } else { missing.push('Inventory Items'); }
+    if (data.specialises && data.specialises.length > 3) { score += 10; } else { missing.push('Specialisation'); }
+    const percentage = Math.round((score / maxScore) * 100);
+    let quality = 'Poor';
+    if (percentage >= 80) quality = 'Excellent';
+    else if (percentage >= 60) quality = 'Good';
+    else if (percentage >= 40) quality = 'Fair';
+    return { score, maxScore, percentage, quality, missing };
+  }
+
+  // --- Duplicate Check (mock) ---
+  function checkDuplicate(vendorData) {
+    const existingNames = ['Sadhana Tent House', 'Golden Tent House', 'Sharon Tent House'];
+    const normalized = vendorData.displayName?.toLowerCase().replace(/[^a-z]/g, '') || '';
+    for (const name of existingNames) {
+      if (name.toLowerCase().replace(/[^a-z]/g, '') === normalized) {
+        return { duplicate: true, matchType: 'name', existing: name };
+      }
+    }
+    return { duplicate: false };
+  }
+
+  // --- AI UI References ---
+  const aiInput = document.getElementById('aiInput');
+  const aiExtractBtn = document.getElementById('aiExtractBtn');
+  const aiClearBtn = document.getElementById('aiClearBtn');
+  const aiResults = document.getElementById('aiResults');
+  const aiQualityScore = document.getElementById('aiQualityScore');
+  const aiQualityLabel = document.getElementById('aiQualityLabel');
+  const aiStatusBadge = document.getElementById('aiStatusBadge');
+  const aiDuplicateBadge = document.getElementById('aiDuplicateBadge');
+  const aiMissingFields = document.getElementById('aiMissingFields');
+  const aiItemCount = document.getElementById('aiItemCount');
+  const aiExtractedItems = document.getElementById('aiExtractedItems');
+  const aiSuggestions = document.getElementById('aiSuggestions');
+  const aiFormName = document.getElementById('aiFormName');
+  const aiFormPhone = document.getElementById('aiFormPhone');
+  const aiFormAddress = document.getElementById('aiFormAddress');
+  const aiFormCity = document.getElementById('aiFormCity');
+  const aiFormArea = document.getElementById('aiFormArea');
+  const aiFormPincode = document.getElementById('aiFormPincode');
+  const aiFormSpecialises = document.getElementById('aiFormSpecialises');
+  const aiFormItems = document.getElementById('aiFormItems');
+
+  // --- AI Core Functions ---
+  function runAIExtraction() {
+    const text = aiInput.value.trim();
+    if (!text) { showToast('Please paste some text first.', '⚠️'); return; }
+
+    const parsed = vendorNLP.parse(text);
+    const items = inventoryExtractor.extract(text);
+    const vendorData = {
+      displayName: parsed.name || '',
+      phone: parsed.phone || '',
+      address: parsed.address || '',
+      cityDist: parsed.city || '',
+      area: parsed.area || '',
+      pincode: parsed.pincode || '',
+      specialises: parsed.specialises || '',
+      items: items,
+      raw: text
+    };
+    const quality = scoreVendor(vendorData);
+    const duplicate = checkDuplicate(vendorData);
+    renderAIResults(vendorData, quality, duplicate);
+    autoFillAIForm(vendorData);
+    generateAISuggestions(vendorData, quality);
+    aiResults.classList.remove('hidden');
+    aiResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    showToast('✅ AI extraction complete!', 'success');
+  }
+
+  function renderAIResults(vendor, quality, duplicate) {
+    aiQualityScore.textContent = quality.percentage + '%';
+    aiQualityLabel.textContent = quality.quality;
+    aiQualityLabel.className = `px-3 py-1 rounded-full text-sm font-bold quality-${quality.quality.toLowerCase()}`;
+    const isApproved = quality.percentage >= 60;
+    aiStatusBadge.innerHTML = isApproved ? '<i class="fa-regular fa-circle-check text-emerald-500 mr-1.5"></i> Auto-Approved' : '<i class="fa-regular fa-clock mr-1.5"></i> Needs Review';
+    aiStatusBadge.className = `px-4 py-2 rounded-xl text-sm font-medium ${isApproved ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}`;
+    if (duplicate.duplicate) {
+      aiDuplicateBadge.classList.remove('hidden');
+      aiDuplicateBadge.textContent = `⚠️ Duplicate: "${duplicate.existing}" already exists`;
+    } else {
+      aiDuplicateBadge.classList.add('hidden');
+    }
+    aiMissingFields.innerHTML = quality.missing.map(f => `<span class="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-full border border-red-200">⚠️ ${f}</span>`).join('');
+    if (quality.missing.length === 0) {
+      aiMissingFields.innerHTML = '<span class="text-xs text-emerald-600"><i class="fa-regular fa-circle-check mr-1"></i> All fields complete!</span>';
+    }
+    document.getElementById('aiExtractedName').textContent = vendor.displayName || '—';
+    document.getElementById('aiExtractedPhone').textContent = vendor.phone || '—';
+    document.getElementById('aiExtractedAddress').textContent = vendor.address || '—';
+    document.getElementById('aiExtractedCity').textContent = vendor.cityDist || '—';
+    document.getElementById('aiExtractedArea').textContent = vendor.area || '—';
+    document.getElementById('aiExtractedPincode').textContent = vendor.pincode || '—';
+    document.getElementById('aiExtractedSpecialises').textContent = vendor.specialises || '—';
+    aiExtractedItems.innerHTML = '';
+    if (vendor.items && vendor.items.length > 0) {
+      vendor.items.forEach(item => {
+        const el = document.createElement('span');
+        el.className = 'extracted-item';
+        el.innerHTML = `<span class="qty">${item.quantity}</span><span>${item.name}</span><span class="category">${item.category}</span>${item.price ? `<span class="text-emerald-600 text-xs font-bold">₹${item.price}</span>` : ''}`;
+        aiExtractedItems.appendChild(el);
+      });
+      aiItemCount.textContent = `${vendor.items.length} items`;
+    } else {
+      aiExtractedItems.innerHTML = '<p class="text-sm text-slate-400 w-full text-center py-4">No items extracted.</p>';
+      aiItemCount.textContent = '0 items';
+    }
+  }
+
+  function autoFillAIForm(vendor) {
+    aiFormName.value = vendor.displayName || '';
+    aiFormPhone.value = vendor.phone || '';
+    aiFormAddress.value = vendor.address || '';
+    aiFormCity.value = vendor.cityDist || '';
+    aiFormArea.value = vendor.area || '';
+    aiFormPincode.value = vendor.pincode || '';
+    aiFormSpecialises.value = vendor.specialises || '';
+    if (vendor.items && vendor.items.length > 0) {
+      aiFormItems.value = vendor.items.map(i => `${i.name} - ${i.quantity}`).join(', ');
+    }
+  }
+
+  function generateAISuggestions(vendor, quality) {
+    const suggestions = [];
+    if (quality.missing.includes('Business Name')) { suggestions.push('• Add a business name to improve discoverability.'); }
+    if (quality.missing.includes('Phone Number')) { suggestions.push('• Add a valid phone number so customers can reach you.'); }
+    if (quality.missing.includes('Full Address')) { suggestions.push('• Add your full address so customers can find you.'); }
+    if (quality.missing.includes('Inventory Items')) { suggestions.push('• List your inventory items with quantities for better visibility.'); }
+    if (vendor.items && vendor.items.length > 0) {
+      const categories = [...new Set(vendor.items.map(i => i.category))];
+      suggestions.push(`• You have ${vendor.items.length} items across ${categories.length} categories. Consider adding prices.`);
+    }
+    if (quality.percentage >= 80) { suggestions.push('✅ Your vendor profile is complete! Ready to publish.'); }
+    aiSuggestions.innerHTML = suggestions.length > 0 ? suggestions.map(s => `<p>${s}</p>`).join('') : '<p>• No suggestions. Your profile looks great!</p>';
+  }
+
+  // --- AI Event Listeners ---
+  aiExtractBtn.addEventListener('click', runAIExtraction);
+  aiClearBtn.addEventListener('click', () => { aiInput.value = ''; aiResults.classList.add('hidden'); showToast('Cleared all data.', 'info'); });
+  aiInput.addEventListener('keydown', (e) => { if (e.key === 'Enter' && e.ctrlKey) { e.preventDefault(); runAIExtraction(); } });
+
+  // --- AI Form Submit ---
+  document.getElementById('aiOnboardingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const vendorData = {
+      displayName: aiFormName.value.trim(),
+      phone: aiFormPhone.value.trim(),
+      address: aiFormAddress.value.trim(),
+      cityDist: aiFormCity.value.trim(),
+      area: aiFormArea.value.trim(),
+      pincode: aiFormPincode.value.trim(),
+      specialises: aiFormSpecialises.value.trim(),
+      items: aiFormItems.value.split(',').map(s => s.trim()).filter(Boolean),
+      source: 'ai_onboarding'
+    };
+    if (!vendorData.displayName || !vendorData.phone || vendorData.items.length === 0) {
+      showToast('Please fill in all required fields (Name, Phone, Items).', '⚠️');
+      return;
+    }
+    const quality = scoreVendor(vendorData);
+    if (quality.percentage < 40) {
+      if (!confirm('⚠️ This vendor profile is incomplete (Score: ' + quality.percentage + '%). Continue anyway?')) { return; }
+    }
+    // Save to backend
+    const formData = new FormData();
+    formData.append('action', 'onboard');
+    formData.append('displayName', vendorData.displayName);
+    formData.append('phone', vendorData.phone);
+    formData.append('address', vendorData.address || '');
+    formData.append('cityDist', vendorData.cityDist || '');
+    formData.append('area', vendorData.area || '');
+    formData.append('pincode', vendorData.pincode || '');
+    formData.append('specialises', vendorData.specialises || '');
+    formData.append('itemsSupply', vendorData.items.join(', '));
+    formData.append('source', 'ai_onboarding');
+    formData.append('qualityScore', quality.percentage);
+    formData.append('status', quality.percentage >= 60 ? 'approved' : 'pending');
+    fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: formData, mode: 'no-cors' })
+      .then(() => { showToast('✅ Vendor saved successfully!', 'success'); aiResults.classList.add('hidden'); document.getElementById('aiOnboardingForm').reset(); })
+      .catch(() => { showToast('⚠️ Failed to save. Please try again.', 'error'); });
+  });
+
+  // ============================================================
+  // WHATSAPP-STYLE CHAT (AI Onboarding)
+  // ============================================================
+  let waStep = 0;
+  const waQuestions = [
+    { field: 'displayName', question: 'What is your business name?' },
+    { field: 'phone', question: 'What is your contact number?' },
+    { field: 'address', question: 'What is your full address?' },
+    { field: 'items', question: 'What items do you have? (e.g., 10 canopies, 500 chairs)' },
+    { field: 'specialises', question: 'What events do you specialise in?' }
+  ];
+  const waData = {};
+
+  function addWAMessage(text, type = 'bot') {
+    const div = document.createElement('div');
+    div.className = `chat-bubble ${type}`;
+    div.textContent = text;
+    document.getElementById('waChat').appendChild(div);
+    document.getElementById('waChat').scrollTop = document.getElementById('waChat').scrollHeight;
+  }
+
+  function processWAAnswer(answer) {
+    if (waStep < waQuestions.length) {
+      const field = waQuestions[waStep].field;
+      waData[field] = answer;
+      waStep++;
+      if (waStep < waQuestions.length) {
+        addWAMessage(waQuestions[waStep].question);
+      } else {
+        addWAMessage('✅ Thank you! Here\'s your vendor summary:', 'system');
+        const summary = Object.entries(waData).map(([k, v]) => `• ${k}: ${v}`).join('\n');
+        addWAMessage(summary, 'system');
+        addWAMessage('📋 Your vendor profile has been created. You can now publish it.', 'system');
+        const items = inventoryExtractor.extract(waData.items || '');
+        autoFillAIForm({ displayName: waData.displayName || '', phone: waData.phone || '', address: waData.address || '', items: items, specialises: waData.specialises || '' });
+        aiResults.classList.remove('hidden');
+        showToast('✅ Vendor data collected via WhatsApp chat!', 'success');
+      }
+    }
+  }
+
+  document.getElementById('waSend').addEventListener('click', () => {
+    const answer = document.getElementById('waInput').value.trim();
+    if (!answer) return;
+    addWAMessage(answer, 'user');
+    document.getElementById('waInput').value = '';
+    processWAAnswer(answer);
+  });
+  document.getElementById('waInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); document.getElementById('waSend').click(); } });
+  // Initialize WhatsApp chat
+  addWAMessage(waQuestions[0].question);
+
+  // ============================================================
+  // DYNAMIC VENDOR LOADING (existing)
+  // ============================================================
   async function loadVendors() {
     const grid = document.getElementById('directoryGrid');
     const empty = document.getElementById('emptyState');
     const counter = document.getElementById('counterNumber');
     const liveCount = document.getElementById('liveCount');
 
-    // Render helper — shared by live fetch and cached fallback, so behaviour is identical either way
     function renderVendors(vendors, fromCache) {
       const approved = vendors.filter(v => v && v.bizName && String(v.status || '').trim().toLowerCase() === 'approved');
-
-      if (approved.length === 0) {
-        grid.innerHTML = '';
-        empty.classList.remove('hidden');
-        counter.textContent = '0';
-        liveCount.textContent = '0';
-        return;
-      }
-
+      if (approved.length === 0) { grid.innerHTML = ''; empty.classList.remove('hidden'); counter.textContent = '0'; liveCount.textContent = '0'; return; }
       empty.classList.add('hidden');
       let html = '';
       approved.forEach(v => {
@@ -1743,14 +2306,10 @@
         const district = v.city || 'Hyderabad';
         const area = v.area || '';
         const items = v.items || '';
-        // Real rating/review fields come from the sheet (populated once you have actual
-        // reviews). Until then we show a "New" badge instead of a fabricated number —
-        // never invent a rating or review count client-side.
         const hasRating = v.avgRating !== undefined && v.avgRating !== '' && Number(v.reviewCount) > 0;
         const ratingBadge = hasRating
           ? `<span class="inv-tag" style="background:#fffbeb;border-color:#fde68a;color:#92400e"><i class="fa-solid fa-star text-amber-500"></i> ${Number(v.avgRating).toFixed(1)} (${v.reviewCount})</span>`
           : `<span class="inv-tag" style="background:#eff6ff;border-color:#bfdbfe;color:#1e40af">New on CloudTentO</span>`;
-
         html += `
           <div class="vendor-card bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-orange-300 hover:shadow-md transition shadow-sm flex flex-wrap items-start justify-between gap-4" data-district="${district}">
             <div class="flex-1 min-w-0">
@@ -1760,19 +2319,12 @@
               </div>
               <h4 class="text-lg font-bold text-slate-900"><i class="fa-solid fa-location-dot text-red-500 mr-1.5"></i>${v.bizName}</h4>
               <p class="text-sm text-slate-500">${area}${district ? ', ' + district : ''}</p>
-              <div class="flex flex-wrap gap-1.5 mt-2">
-                ${ratingBadge}
-                <span class="inv-tag">Tent House Supplier</span>
-              </div>
+              <div class="flex flex-wrap gap-1.5 mt-2">${ratingBadge}<span class="inv-tag">Tent House Supplier</span></div>
               <p class="text-xs text-slate-500 italic mt-2">${items ? items.substring(0, 60) + (items.length > 60 ? '…' : '') : ''}</p>
             </div>
             <div class="flex flex-col gap-2 items-end">
-              <a href="tel:${phone}" class="btn-green text-sm px-5 py-2.5 rounded-xl shadow-sm whitespace-nowrap">
-                <i class="fa-solid fa-phone"></i> Call Now
-              </a>
-              <a href="https://wa.me/${phone}?text=Hi%2C%20I%20saw%20your%20listing%20on%20CloudTentO.%20I%20need%20a%20quote%20for%20my%20event." target="_blank" class="text-xs font-semibold text-green-700 flex items-center gap-1 hover:underline">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-              </a>
+              <a href="tel:${phone}" class="btn-green text-sm px-5 py-2.5 rounded-xl shadow-sm whitespace-nowrap"><i class="fa-solid fa-phone"></i> Call Now</a>
+              <a href="https://wa.me/${phone}?text=Hi%2C%20I%20saw%20your%20listing%20on%20CloudTentO.%20I%20need%20a%20quote%20for%20my%20event." target="_blank" class="text-xs font-semibold text-green-700 flex items-center gap-1 hover:underline"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
               <button class="view-detail-btn text-xs font-medium text-blue-600 hover:underline mt-1" 
                 data-name="${v.bizName}" 
                 data-address="${area}${district ? ', ' + district : ''}" 
@@ -1785,17 +2337,12 @@
           </div>
         `;
       });
-
       grid.innerHTML = html;
       counter.textContent = approved.length;
       liveCount.textContent = approved.length;
-
       attachViewDetailListeners();
       applyFilters();
-
-      if (!fromCache) {
-        try { localStorage.setItem('tw_vendor_cache', JSON.stringify({ ts: Date.now(), vendors })); } catch (e) {}
-      }
+      if (!fromCache) { try { localStorage.setItem('tw_vendor_cache', JSON.stringify({ ts: Date.now(), vendors })); } catch (e) {} }
     }
 
     try {
@@ -1804,13 +2351,10 @@
       const res = await fetch(GOOGLE_SCRIPT_URL, { signal: controller.signal });
       clearTimeout(timeout);
       const vendors = await res.json();
-
       if (!vendors || !Array.isArray(vendors)) throw new Error('Malformed response');
       renderVendors(vendors, false);
-
     } catch (err) {
       console.error('Failed to load vendors, trying cache:', err);
-      // Fall back to last known-good data instead of showing a bare "0" to a visitor
       try {
         const cached = JSON.parse(localStorage.getItem('tw_vendor_cache') || 'null');
         if (cached && Array.isArray(cached.vendors) && cached.vendors.length) {
@@ -1842,10 +2386,6 @@
     const hasRealReviews = !!btn.dataset.rating;
     const displayRating = btn.dataset.rating;
     const displayReviewCount = btn.dataset.reviews;
-    // NOTE: quantities and prices are NOT fabricated. We only know what the vendor
-    // typed at onboarding (item names, and free-text qty if they included it). Exact
-    // availability and pricing are confirmed live with the vendor via Call/WhatsApp —
-    // never invented client-side.
     const itemList = items.split(',').map(s => s.trim()).filter(Boolean);
     let inventoryItems = itemList.map((item, idx) => {
       const category = item.toLowerCase().includes('tent') ? 'tents' :
@@ -1857,9 +2397,7 @@
       return { id: idx+1, name: item, category, unit: 'day', description: '' };
     });
     window._inventoryItems = inventoryItems;
-    const itemsHTML = inventoryItems.map(item =>
-      `<span class="inv-tag">${item.name}</span>`
-    ).join('');
+    const itemsHTML = inventoryItems.map(item => `<span class="inv-tag">${item.name}</span>`).join('');
 
     const modalHtml = `
       <div class="mb-4">
@@ -1868,15 +2406,11 @@
         <p class="text-sm text-slate-500"><i class="fa-solid fa-phone mr-1"></i>${phone}</p>
         <div class="flex flex-wrap gap-1.5 mt-2">${itemsHTML}</div>
       </div>
-
-      <!-- Tabs -->
       <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-2 mb-4">
         <button class="vendor-tab-btn active" data-tab="inventory">📦 Inventory</button>
         <button class="vendor-tab-btn" data-tab="booking">📝 Enquiry & Book</button>
         <button class="vendor-tab-btn" data-tab="reviews">⭐ Reviews</button>
       </div>
-
-      <!-- Inventory Tab -->
       <div id="vendorTab-inventory" class="vendor-tab-content active">
         <p class="text-xs text-slate-400 mb-3">Items as listed by the vendor. Exact quantity, condition and pricing are confirmed live — tap Call or WhatsApp above.</p>
         <div id="inventoryGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -1891,68 +2425,27 @@
           `).join('') || '<p class="text-sm text-slate-500 col-span-2">No itemized inventory listed yet — ask the vendor directly.</p>'}
         </div>
       </div>
-
-      <!-- Booking / Enquiry Tab -->
       <div id="vendorTab-booking" class="vendor-tab-content hidden">
         <p class="text-xs text-slate-400 mb-3">This goes straight to the vendor via WhatsApp. Pricing and availability are confirmed by them, not estimated by us.</p>
         <form id="bookingForm" class="space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Full Name *</label>
-              <input type="text" id="bookName" required placeholder="Your name" class="form-input" />
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Phone *</label>
-              <input type="tel" id="bookPhone" required placeholder="10-digit mobile" class="form-input" />
-            </div>
+            <div><label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Full Name *</label><input type="text" id="bookName" required placeholder="Your name" class="form-input" /></div>
+            <div><label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Phone *</label><input type="tel" id="bookPhone" required placeholder="10-digit mobile" class="form-input" /></div>
           </div>
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Event Name</label>
-            <input type="text" id="bookEvent" placeholder="e.g., Gupta Wedding" class="form-input" />
-          </div>
+          <div><label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Event Name</label><input type="text" id="bookEvent" placeholder="e.g., Gupta Wedding" class="form-input" /></div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Event Date *</label>
-              <input type="date" id="bookDate" required class="form-input" />
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Guest Count *</label>
-              <select id="bookGuestCount" required class="form-input">
-                <option value="50-100">50 — 100 Pax</option>
-                <option value="100-300" selected>100 — 300 Pax</option>
-                <option value="300-500">300 — 500 Pax</option>
-                <option value="500+">500+ Pax</option>
-              </select>
-            </div>
+            <div><label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Event Date *</label><input type="date" id="bookDate" required class="form-input" /></div>
+            <div><label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Guest Count *</label><select id="bookGuestCount" required class="form-input"><option value="50-100">50 — 100 Pax</option><option value="100-300" selected>100 — 300 Pax</option><option value="300-500">300 — 500 Pax</option><option value="500+">500+ Pax</option></select></div>
           </div>
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Event Type</label>
-            <select id="bookEventType" class="form-input">
-              <option value="Wedding">Wedding</option>
-              <option value="Birthday">Birthday</option>
-              <option value="Corporate">Corporate Event</option>
-              <option value="Religious">Religious Gathering</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Additional Requirements</label>
-            <textarea id="bookNotes" rows="2" placeholder="Any special requirements..." class="form-input resize-none"></textarea>
-          </div>
-          <button type="submit" class="btn-saffron w-full py-3 text-sm rounded-xl">
-            <i class="fa-solid fa-paper-plane"></i> Send Enquiry to Vendor
-          </button>
+          <div><label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Event Type</label><select id="bookEventType" class="form-input"><option value="Wedding">Wedding</option><option value="Birthday">Birthday</option><option value="Corporate">Corporate Event</option><option value="Religious">Religious Gathering</option><option value="Other">Other</option></select></div>
+          <div><label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Additional Requirements</label><textarea id="bookNotes" rows="2" placeholder="Any special requirements..." class="form-input resize-none"></textarea></div>
+          <button type="submit" class="btn-saffron w-full py-3 text-sm rounded-xl"><i class="fa-solid fa-paper-plane"></i> Send Enquiry to Vendor</button>
         </form>
         <div id="bookingFeedback" class="mt-3 text-sm font-medium text-center hidden"></div>
       </div>
-
-      <!-- Reviews Tab -->
       <div id="vendorTab-reviews" class="vendor-tab-content hidden">
         <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-slate-800">⭐ Reviews</h3>
-            <span class="text-sm text-slate-500">${hasRealReviews ? displayRating + ' (' + displayReviewCount + ')' : 'No reviews yet'}</span>
-          </div>
+          <div class="flex items-center justify-between"><h3 class="font-bold text-slate-800">⭐ Reviews</h3><span class="text-sm text-slate-500">${hasRealReviews ? displayRating + ' (' + displayReviewCount + ')' : 'No reviews yet'}</span></div>
           <p class="text-sm text-slate-500">This vendor is newly onboarded — be the first customer to book and leave a review.</p>
           <button class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-4 py-2 rounded-xl transition text-sm">Write a Review</button>
         </div>
@@ -1992,20 +2485,14 @@
         const eventType = document.getElementById('bookEventType').value;
         const notes = document.getElementById('bookNotes').value.trim();
         if (!name || !phone || !date) { alert('Please fill required fields.'); return; }
-
-        // Actually send it — to the vendor's own WhatsApp if we have their number,
-        // and log it to the backend so it's not lost if the tab closes before
-        // WhatsApp opens.
-        const msg = `📋 *New Enquiry via CloudTentO*\n\n` +
-          `*Vendor:* ${vendorName || ''}\n*Name:* ${name}\n*Phone:* ${phone}\n` +
+        const msg = `📋 *New Enquiry via CloudTentO*\n\n*Vendor:* ${vendorName || ''}\n*Name:* ${name}\n*Phone:* ${phone}\n` +
           (eventName ? `*Event:* ${eventName}\n` : '') +
           `*Date:* ${date}\n*Guests:* ${guestCount}\n*Type:* ${eventType}\n` +
           (notes ? `*Notes:* ${notes}\n` : '') +
-          `\n_Sent via CloudTentOvendor enquiry form._`;
+          `\n_Sent via CloudTentO vendor enquiry form._`;
         const target = vendorPhone ? vendorPhone.replace(/\D/g, '') : '919948680017';
         window.open(`https://wa.me/${target}?text=${encodeURIComponent(msg)}`, '_blank');
         postToBackend({ type: 'enquiry', name, phone, date, size: guestCount, area: vendorName || '', needs: `${eventType}${notes ? ' — ' + notes : ''}`, subtype: 'vendor-direct' });
-
         const feedback = document.getElementById('bookingFeedback');
         feedback.className = 'text-sm font-medium text-center block text-emerald-600 mt-3';
         feedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you, ${name}! Your enquiry has been sent — the vendor will confirm availability and pricing directly.`;
@@ -2020,14 +2507,9 @@
     modalOverlay.classList.remove('open');
     document.body.style.overflow = '';
   }
-
   modalClose.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-  });
+  modalOverlay.addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 
   // ============================================================
   // CHATBOT
@@ -2072,7 +2554,6 @@
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }, 600);
   }
-
   chatSend.addEventListener('click', sendChatMessage);
   chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendChatMessage(); });
 
@@ -2091,7 +2572,7 @@
   });
 
   // ============================================================
-  // INVENTORY CALCULATOR (from inventory guide)
+  // INVENTORY CALCULATOR
   // ============================================================
   window.updateCalc = function() {
     const guests = parseInt(document.getElementById('guestSlider').value);
@@ -2103,11 +2584,10 @@
     document.getElementById('power').textContent = Math.ceil(guests * 50 / 1000);
     document.getElementById('labour').textContent = Math.max(2, Math.ceil(guests / 25));
   };
-  // Initialize calculator
   setTimeout(updateCalc, 100);
 
   // ============================================================
-  // VENDOR FORM SUBMIT (WhatsApp + backend)
+  // VENDOR FORM SUBMIT
   // ============================================================
   window.submitVendorForm = function(e) {
     e.preventDefault();
@@ -2147,7 +2627,7 @@
   };
 
   // ============================================================
-  // ENQUIRY FORM (WhatsApp + backend)
+  // ENQUIRY FORM
   // ============================================================
   window.submitEnquiry = function(e) {
     e.preventDefault();
@@ -2307,11 +2787,11 @@
     });
   });
 
-  console.log('CloudTentO with Inventory Guide and prominent navigation.');
+  console.log('CloudTentO with AI Agent fully integrated.');
 })();
 </script>
 
-<!-- Lightbox (if any) -->
+<!-- Lightbox -->
 <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9998;align-items:center;justify-content:center;padding:20px;">
   <span onclick="document.getElementById('lightbox').style.display='none'" style="position:fixed;top:16px;right:20px;color:white;font-size:28px;cursor:pointer;background:rgba(0,0,0,0.4);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;">&times;</span>
   <img id="lightbox-img" src="" alt="Inventory photo" style="max-width:90vw;max-height:85vh;border-radius:12px;object-fit:contain;" />
