@@ -1,0 +1,39 @@
+# ========================================================
+# robots.txt for Eventry AI Cloud (nbraju.github.io/EventryS- PWA)
+# Optimized for search engines and LLM crawlers
+# ========================================================
+
+User-agent: *
+Allow: /
+Sitemap: https://nbraju.github.io/EventryS/sitemap.xml
+
+# Allow Google's general crawler
+User-agent: Googlebot
+Allow: /
+Sitemap: https://nbraju.github.io/EventryS/sitemap.xml
+
+# Allow Google's LLM crawler (for AI overviews)
+User-agent: Google-Extended
+Allow: /
+Sitemap: https://nbraju.github.io/EventryS/sitemap.xml
+
+# Allow OpenAI's crawler (for ChatGPT, GPT-4 training/relevance)
+User-agent: OAI-SearchBot
+Allow: /
+Sitemap: https://nbraju.github.io/EventryS/sitemap.xml
+
+# Allow Anthropic's crawler (for Claude)
+User-agent: Anthropic-AI
+Allow: /
+Sitemap: https://nbraju.github.io/EventryS/sitemap.xml
+
+# Disallow sensitive/irrelevant paths (if any)
+User-agent: *
+Disallow: /*.json$
+Disallow: /*.log$
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /admin/
+
+# Cache control for search engines
+Host: https://nbraju.github.io/EventryS/
