@@ -1974,16 +1974,16 @@
             const GOOGLE_SCRIPT_URL =
                 'https://script.google.com/macros/s/AKfycbwVshavTK1yv5gBqvs--6gep0NdbJsbx4nEWmjyJy6sJWdGwAaeLC4y6pFpo4slxgWu6w/exec';
 
-            // NOTE: TentDesk (the vendor's own operations app) is self-service —
+            // NOTE: EventDesk (the vendor's own operations app) is self-service —
             // each vendor gets their OWN dedicated Google Sheet and their OWN
             // Apps Script Web App URL, provisioned by ops during approval.
             // There is no single shared vendor backend to POST to at submission
             // time, so the PWA link is left blank here and filled in later by
             // ops in the aggregator sheet's "PWA URL" column once that vendor's
-            // dedicated TentDesk deployment exists. VENDOR_PWA_BASE is kept only
+            // dedicated EventDesk deployment exists. VENDOR_PWA_BASE is kept only
             // as a reference for the link format ops should use when building
             // that PWA URL: VENDOR_PWA_BASE + '?uid=<uid>&vendor=<name>&backend=<their-deployment-url>'
-            const VENDOR_PWA_BASE = 'https://nbraju.github.io/TentDesk/'; // eslint-disable-line no-unused-vars
+            const VENDOR_PWA_BASE = 'https://nbraju.github.io/EventDesk/'; // eslint-disable-line no-unused-vars
 
             // ===== POPUP CONTROLS =====
             window.showEnquiryPopup = function() {
@@ -2286,7 +2286,7 @@
                 }
                 // Same UID + ops-verification flow as the main listing form, so
                 // AI-onboarded vendors are just as trackable and linkable to a
-                // future TentDesk dashboard as manually-listed ones.
+                // future EventDesk dashboard as manually-listed ones.
                 const uid = generateVendorUID(data.category);
                 const msg =
                     `📋 *New Eventry Vendor (AI Onboard)*\n\n*UID:* ${uid}\n*Business:* ${data.displayName}\n*Category:* ${data.category}\n*Area:* ${data.area}\n*Phone:* ${data.phone}\n*Items/Services:* ${data.items}`;
@@ -2470,7 +2470,7 @@
                     items = String(v.items || ''),
                     dist = distanceKm(v),
                     // Only show a "Vendor PWA" link when ops has actually provisioned
-                    // this vendor's dedicated TentDesk sheet+deployment and filled in
+                    // this vendor's dedicated EventDesk sheet+deployment and filled in
                     // the PWA URL column — there is no shared fallback to guess at.
                     pwa = v.pwaUrl || v.vendorPwaUrl || '';
                 const list = items.split(/[,;\n•]/).map(x => x.trim()).filter(Boolean);
@@ -2629,7 +2629,7 @@
             // Every new listing is issued a unique vendor UID. The same UID is written
             // to the aggregator sheet (GOOGLE_SCRIPT_URL, one row per vendor, all vendors)
             // AND appended as a WhatsApp ops-verification message. The vendor's own
-            // TentDesk dashboard (a dedicated Google Sheet + Apps Script deployment)
+            // EventDesk dashboard (a dedicated Google Sheet + Apps Script deployment)
             // does NOT exist yet at this point — it's provisioned by ops during
             // approval — so no vendor PWA link can be built here.
             function generateVendorUID(category) {
@@ -2662,7 +2662,7 @@
                 }
 
                 // 1) Allot a UID for this vendor — this is the permanent reference
-                // key used to match this listing to its TentDesk dashboard once ops
+                // key used to match this listing to its EventDesk dashboard once ops
                 // provisions one during approval.
                 const uid = generateVendorUID(category);
 
@@ -2672,7 +2672,7 @@
 
                 // 2) Aggregator sheet — one row per vendor, all vendors, keyed by uid.
                 // pwaUrl is left blank; ops fills it in (column T) once this vendor's
-                // dedicated TentDesk sheet + Apps Script deployment is provisioned.
+                // dedicated EventDesk sheet + Apps Script deployment is provisioned.
                 const formData = new FormData();
                 formData.append('action', 'onboard');
                 formData.append('uid', uid);
